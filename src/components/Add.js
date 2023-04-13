@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
+import React, { useEffect, useState } from "react";
+
+import Tasks from "./Tasks";
 
 const Add = () => {
   const [content, setContent] = useState("");
@@ -8,7 +9,12 @@ const Add = () => {
 
   const addItem = () => {
     if (content !== "") {
-      const newTodo = { id: id, work: content, isEditing: false };
+      const newTodo = {
+        id: id,
+        work: content,
+        isEditing: false,
+        isDone: false,
+      };
       setTodos([...todos, newTodo]);
       setId(id + 1);
       setContent("");
@@ -17,9 +23,9 @@ const Add = () => {
     }
   };
   return (
-    <div className="h-screen  flex justify-center w-screen items-center border-4 border-red-500">
-      <div className=" h-3/4 bg-[#8EA8C3] w-2/5 rounded-lg flex flex-col justify-center items-center border-4 border-red-500 ">
-        <div className="flex space-x-5">
+    <div className="h-screen  flex justify-center w-screen items-center">
+      <div className=" h-3/4 bg-[#8EA8C3] w-2/5 rounded-2xl  justify-center items-center border-[3px] border-[#23395b]">
+        <div className="flex space-x-5 w-full justify-center items-center mt-3">
           <input
             type="text"
             placeholder="whats for today?!"
@@ -53,18 +59,16 @@ const Add = () => {
             </span>
           </button>
         </div>
+
         <div className=" flex flex-col justify-center items-center  space-y-4 mt-14 w-full">
           {todos.map((todo) => {
             return (
-              <div
+              <Tasks
                 key={todo.id}
-                className=" bg-[#568CB3] text-white w-3/4 py-1 rounded-md hover:scale-105 duration-200"
-              >
-                <div className="flex justify-between mx-3 group ">
-                  {todo.work}{" "}
-                  <DeleteIcon className="cursor-pointer hover:text-red-500 transition active:text-red-600 duration-200" />
-                </div>
-              </div>
+                todo={todo}
+                setTodos={setTodos}
+                todos={todos}
+              />
             );
           })}
         </div>
