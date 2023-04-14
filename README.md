@@ -3,8 +3,8 @@
 - A simple App to maintain a list of tasks
 - It has only frontend developed right now, backend will be added soon
 - After adding backend, users can keep track of their tasks even after closing the tab
-- Allows user to sync data with thei account 
-- Made using react hooks and tailwind
+- Allows user to sync data with their account 
+- Made using [create-react-app](https://create-react-app.dev/) and [TailwindCSS](https://tailwindcss.com/)
 
 # Installation
 - Download and extract this repository
