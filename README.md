@@ -1,4 +1,4 @@
-# To Do App
+# About the App
 
 - A simple App to maintain a list of tasks
 - It has only frontend part yet, backend will be added soon
