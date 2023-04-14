@@ -1,7 +1,7 @@
 # About the App
 
 - A simple App to maintain a list of tasks
-- It has only frontend part yet, backend will be added soon
+- It has only frontend developed right now, backend will be added soon
 - After adding backend, users can keep track of their tasks even after closing the tab
 - Allows user to sync data with thei account 
 - Made using react hooks and tailwind
